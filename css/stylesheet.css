@@ -1,0 +1,47 @@
+:root {
+    --bg-color-1: #1f2224;
+    --bg-color-2: #1e3130;
+    --bg-color-3: #2e5c70;
+    --text-color-1: #ffffff;
+    --text-highlight-1: #aad4cd;
+    --text-highlight-2: #5da8ab;
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: var(--bg-color-1);
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+.title {
+    background: linear-gradient(var(--bg-color-2), var(--bg-color-3));
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.sir-card {
+    overflow: hidden;
+    width: 40%;
+    min-width: 200px;
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 2px;
+    position: relative;
+    /* opacity: 0; */
+    /* transition: opacity 2s ease; */
+}
