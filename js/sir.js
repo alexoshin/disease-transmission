@@ -9,9 +9,9 @@ function setup_sir_canvas(canvas, gridWidth, gridHeight) {
     const colorBlack = 'rgb(0, 0, 0)';
     const colorWhite = 'rgb(255, 255, 255)';
     const colorGray = 'rgb(128, 128, 128)';
-    const colorRed = 'rgb(255, 0, 0)';
-    const colorGreen = 'rgb(0, 255, 0)';
-    const colorBlue = 'rgb(0, 0, 255)';
+    const colorSusceptible = 'rgb(0, 255, 0)';
+    const colorInfected = 'rgb(255, 0, 0)';
+    const colorRecovered = 'rgb(0, 0, 255)';
 
     const cellWidth = canvas.width / gridWidth;
     const cellHeight = canvas.height / gridHeight;
@@ -75,6 +75,7 @@ function setup_sir_canvas(canvas, gridWidth, gridHeight) {
                 break;
         }
         initialize_grid();
+        draw();
     }
 
     function initialize_grid() {
@@ -197,13 +198,13 @@ function setup_sir_canvas(canvas, gridWidth, gridHeight) {
         for (var y = 0; y < gridHeight; y++) {
             for (var x = 0; x < gridWidth; x++) {
                 if (grid[y][x][0] == 1) {
-                    ctx.fillStyle = colorGreen;
+                    ctx.fillStyle = colorSusceptible;
                     ctx.fillRect(x * cellWidth, y * cellHeight, cellWidth, cellHeight);
                 } else if (grid[y][x][0] == 2) {
-                    ctx.fillStyle = colorRed;
+                    ctx.fillStyle = colorInfected;
                     ctx.fillRect(x * cellWidth, y * cellHeight, cellWidth, cellHeight);
                 } else if (grid[y][x][0] == 3) {
-                    ctx.fillStyle = colorBlue;
+                    ctx.fillStyle = colorRecovered;
                     ctx.fillRect(x * cellWidth, y * cellHeight, cellWidth, cellHeight);
                 }
             }
@@ -225,7 +226,7 @@ function setup_sir_canvas(canvas, gridWidth, gridHeight) {
     }
 
     vars.start = function() {
-        interval = window.setInterval(loop, 100);
+        interval = window.setInterval(loop, 75);
     };
 
     vars.stop = function() {
@@ -235,13 +236,11 @@ function setup_sir_canvas(canvas, gridWidth, gridHeight) {
 
     // TODO: Page should handle keypresses, this class should just implement their functionality
     function keypress(event) {
-        console.log(event.code)
         if (event.code == 'KeyC') {  // Clear grid
             clear_grid();
             draw();
         } else if (event.code == 'KeyR') {  // Reset grid to random values
             initialize_sim(curr_sim);
-            draw();
         } else if (event.code == 'KeyP') {  // Toggle pause/run
             if (interval != 0) {
                 vars.stop();
@@ -271,7 +270,6 @@ function setup_sir_canvas(canvas, gridWidth, gridHeight) {
     window.addEventListener('keypress', keypress);
 
     initialize_sim(1);
-    draw();
 
     return vars;
 }
