@@ -1,2 +1,4 @@
 # disease-transmission
-Modeling disease transmission on a grid
+Cellular automata and agent-based grid simulations of SIR model.
+
+Originally implemented in Processing as a class project for [CS 7492: Simulation of Biology](https://www.cc.gatech.edu/~turk/bio_sim/index.html) at Georgia Tech. Adapted to Javascript.
