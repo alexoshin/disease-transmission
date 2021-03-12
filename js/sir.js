@@ -2,7 +2,7 @@
 function setup_sir_canvas(canvas, gridWidth, gridHeight) {
     var vars = {};
 
-    canvas.width = window.innerWidth / 2;
+    canvas.width = Math.max(window.innerWidth / 2, window.innerHeight);
     canvas.height = canvas.width;
     const ctx = canvas.getContext('2d');
 
@@ -236,10 +236,7 @@ function setup_sir_canvas(canvas, gridWidth, gridHeight) {
 
     // TODO: Page should handle keypresses, this class should just implement their functionality
     function keypress(event) {
-        if (event.code == 'KeyC') {  // Clear grid
-            clear_grid();
-            draw();
-        } else if (event.code == 'KeyR') {  // Reset grid to random values
+        if (event.code == 'KeyR') {  // Reset grid to random values
             initialize_sim(curr_sim);
         } else if (event.code == 'KeyP') {  // Toggle pause/run
             if (interval != 0) {
