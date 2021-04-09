@@ -7,16 +7,6 @@
     --text-highlight-2: #5da8ab;
 }
 
-@font-face {
-    font-family: "Lato";
-    src: url("../fonts/lato.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "Roboto";
-    src: url("../fonts/roboto.ttf") format("truetype");
-}
-
 body {
     margin: 0;
     width: 100vw;
@@ -70,8 +60,7 @@ a {
     font-size: 2rem;
     text-align: center;
     white-space: nowrap;
-    font-family: "Lato", sans-serif;
-    font-weight: 300;
+    font-family: 'Lato', sans-serif;
 }
 
 .icon {
@@ -126,7 +115,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Roboto", monospace;
+    font-family: 'Roboto Mono', monospace;
     font-size: 20px;
     margin: 20px;
 }
