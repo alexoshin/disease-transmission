@@ -7,6 +7,16 @@
     --text-highlight-2: #5da8ab;
 }
 
+@font-face {
+    font-family: 'Lato';
+    src: url('./fonts/Lato-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Regular.ttf') format('truetype');
+}
+
 body {
     margin: 0;
     width: 100vw;
