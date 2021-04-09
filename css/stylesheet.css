@@ -9,12 +9,12 @@
 
 @font-face {
     font-family: 'Lato';
-    src: url('./fonts/lato.ttf') format('truetype');
+    src: url('../fonts/lato.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Roboto';
-    src: url('./fonts/roboto.ttf') format('truetype');
+    src: url('../fonts/roboto.ttf') format('truetype');
 }
 
 body {
